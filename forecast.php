@@ -15,22 +15,35 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+	<link rel="stylesheet" type="text/css" href="css/theme.css">
+
 </head>
 <body id="backdrop">
 
 <!-- Set the background of #backdrop to the image corresponding to the weather returned.  -->
 
-<div id="wrapper" class="col-med-12">
+<div id="wrapper" class="container-fluid">
 
-<!-- Wrapper will contain all the content information at a fixed sixe: 1026 x 600, centered with no margin at the top -->
+<!-- Wrapper will contain all the content information at a fixed sixe: 1024 x 600, centered with no margin at the top -->
 
-	<div class="row">Your Location Is:</div>
+	<div class="row">
+		<div class="col-med-12 text-center">
+		Your Location Is:
+		</div>
+	</div>
 	
-	<div id="location" class="row"></div>
+	<div id="location" class="row">
+		<div class="col-med-12 text-center"></div>
+	</div>
 
 	<div id="temp" class="row">
-		<div id="w-reading" class="col-med-6"></div>
-		<div id="w-toggle" class="col-med-6"></div>
+		<div id="t-reading" class="col-med-6 pull-left text-right">Weather Reading Placeholder</div>
+		<div id="t-toggle" class="col-med-6 pull-right text-left">Farenheit switch Placeholder</div>
+	</div>
+
+	<div id="cond">
+		<div id="w-reading" class="col-med-6 text-center pull-left">Condition Goes Here</div>
+		<div id="windspeed" class="col-med-6 text-center pull-right">Windspeed goes here</div>
 	</div>
 
 	
