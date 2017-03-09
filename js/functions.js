@@ -1,74 +1,92 @@
-// Need to get coordinates
-function getRegion(){
+// var x = document.getElementById("demo");
+// var y = document.getElementById("weather");
+// var lat;
+// var lon;
 
-	$.get("http://ipinfo.io", function (response) {
-    $("#location").html(response.city + ", " + response.region);},"jsonp");
+function getLocation() {
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError, {timeout:10000});
+
+        console.log("Inside getLocation");
+    } else { 
+        document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
+    }
+
+    // if(typeof callback == 'function'){
+    // 	callback();
+    // }
 }
 
-function getCoords(){
-
-	if (navigator.geolocation) {
-        
-        return navigator.geolocation.getCurrentPosition();
-    } 
-
-    return "Geolocation is not supported by this browser.";
+function showPosition(position) {
     
+	console.log("Show position invoked");
+
+    // document.getElementById("demo").innerHTML = "Latitude: " + position.coords.latitude + 
+    // "<br>Longitude: " + position.coords.longitude;
+    
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+
+    console.log(lat);
+    console.log(lon);
+
+    // getWeather(lat,lon);
 }
 
-function showPosition(position){
+function showError(error){
 
-
+	alert(error);
 }
 
-// Need to get weather JSON object
-function getWeather(){
+// function getWeather(latitude,longitude){
 
-	var position = getCoords();
-	var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
+// console.log("getWeather invoked");
 
-	$.ajax(
-		dataType: "json",
-		url: url,
-		data: {},
-		cache: false,
-		success: function(data){
+// var uri = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&APPID=31e20710748d89e19d924e0982c5a3e3";
 
-			var imgURL = setIconUrl(data.weather.icon);
-
-			document.getElementById("#t-reading").innerHTML = "<img src='" + imgURL + "'> " + data.main.temp;
-
-			document.getElementById("#w-reading").innerHTML = data.weather.description;
-
-		}
-
-		);
+// console.log(uri);
 
 
-}
+// $.ajax({
+// 	dataType: 'json',
+//   type: 'GET',
+//   url: uri,
+//   cache: 'yes',
+//   data: {},
+//   success: function(data){
+  
+//   	document.getElementById("location").innerHTML = data.name + ", " + data.sys.country;
+//   	document.getElementById("t-reading").innerHTML = data.main.temp;
+//   	document.getElementById("w-reading").innerHTML = data.weather[0].description;
+//   	document.getElementById("windspeed").innerHTML = data.wind.speed;
+//   	// console.log(data.sys.country);
+//   	// console.log(data.weather[0].description);
+//   },
+//   error: function(err){alert(err);},
+ 
+// });
+// }
 
-// Construct icon URL based on icon code -- http://openweathermap.org/img/w/<icon_id>.png
-function setIconURL(var id){
+/*$(document).ready(function(){
 
-	var mainURI = "http://openweathermap.org/img/w/";
+	lat = 0;
+	lon = 0;
 
-	return mainURI+id+".png";
-}
+	getLocation();
 
-
-//Set background based on weather
-function setBackdrop(var cond){
-
-	return cond;
-}
+	console.log(lat + lon);
+})*/
 
 $(document).ready(function(){
 
-// Get current coordinates and translate to a location 
+	console.log("DOM ready");
+	getLocation();
+	
 
+	// lat = 0;
+	// lon = 0;
 
-getRegion();
-getWeather();
-
-
+	// document.getElementById("conds").addEventListener("click", getWeather);
+	// getWeather();
 });

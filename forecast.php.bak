@@ -28,13 +28,6 @@
 
 <!-- Wrapper will contain all the content information at a fixed sixe: 1024 x 600, centered with no margin at the top -->
 
-<!-- 	<p>Click the button to get your coordinates.</p>
-
-	<button id="conds">Try It</button>
-
-	<p id="demo"></p>
-
-	<p id="weather"></p> -->
 	<div class="row">
 		<div class="col-med-12 text-center">
 		Your Location Is:
@@ -42,7 +35,7 @@
 	</div>
 	
 	<div id="location" class="row">
-		<!-- <div class="col-med-12 text-center"></div> -->
+		<div class="col-med-12 text-center"></div>
 	</div>
 
 	<div id="temp" class="row">
@@ -54,6 +47,7 @@
 		<div id="w-reading" class="col-med-6 text-center pull-left">Condition Goes Here</div>
 		<div id="windspeed" class="col-med-6 text-center pull-right">Windspeed goes here</div>
 	</div>
+
 	
 </div>
 
