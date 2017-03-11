@@ -13,9 +13,7 @@
 
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-	<script src="js/functions.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="css/theme.css">
 
@@ -36,27 +34,36 @@
 
 	<p id="weather"></p> -->
 	<div class="row">
-		<div class="col-med-12 text-center">
+		<div class="text-center">
 		Your Location Is:
 		</div>
 	</div>
-	
-	<div id="location" class="row">
-		<!-- <div class="col-med-12 text-center"></div> -->
+	<div class="row">
+		<div id="location" class="row">
+			<!-- <div class="col-med-12 text-center"></div> -->
+		</div>
 	</div>
 
-	<div id="temp" class="row">
-		<div id="t-reading" class="col-med-6 pull-left text-right">Weather Reading Placeholder</div>
-		<div id="t-toggle" class="col-med-6 pull-right text-left">Farenheit switch Placeholder</div>
-	</div>
+	<div id="temp"  class="row">
+		<div id="left-col" class="col-md-4 pull-left">
+			<div id="t-reading">Weather Reading</div>
+			<div id="t-toggle">Farenheit switch</div>
+		</div>
+<!-- 	</div>
 
-	<div id="cond">
-		<div id="w-reading" class="col-med-6 text-center pull-left">Condition Goes Here</div>
-		<div id="windspeed" class="col-med-6 text-center pull-right">Windspeed goes here</div>
+	<div id="cond" class="row"> -->
+		<div id="right-col" class="col-md-4 pull-right">
+			<div id="w-image" class="col-md-6"></div>
+			<div id="w-reading" class="col-md-6">Condition Goes Here</div>
+		<!-- <div id="windspeed" class="col-md-6 text-center pull-right">Windspeed goes here</div> -->
+		</div>
 	</div>
 	
 </div>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/functions.js"></script>
 </body>
 </html>
