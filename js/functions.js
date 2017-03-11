@@ -31,7 +31,7 @@ function showPosition(position) {
     console.log(lat);
     console.log(lon);
 
-    // getWeather(lat,lon);
+    getWeather(lat,lon);
 }
 
 function showError(error){
@@ -39,34 +39,34 @@ function showError(error){
 	alert(error);
 }
 
-// function getWeather(latitude,longitude){
+function getWeather(latitude,longitude){
 
-// console.log("getWeather invoked");
+console.log("getWeather invoked");
 
-// var uri = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&APPID=31e20710748d89e19d924e0982c5a3e3";
+var uri = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&APPID=31e20710748d89e19d924e0982c5a3e3";
 
-// console.log(uri);
+console.log(uri);
 
 
-// $.ajax({
-// 	dataType: 'json',
-//   type: 'GET',
-//   url: uri,
-//   cache: 'yes',
-//   data: {},
-//   success: function(data){
+$.ajax({
+	dataType: 'json',
+  type: 'GET',
+  url: uri,
+  cache: 'yes',
+  data: {},
+  success: function(data){
   
-//   	document.getElementById("location").innerHTML = data.name + ", " + data.sys.country;
-//   	document.getElementById("t-reading").innerHTML = data.main.temp;
-//   	document.getElementById("w-reading").innerHTML = data.weather[0].description;
-//   	document.getElementById("windspeed").innerHTML = data.wind.speed;
-//   	// console.log(data.sys.country);
-//   	// console.log(data.weather[0].description);
-//   },
-//   error: function(err){alert(err);},
+  	document.getElementById("location").innerHTML = data.name + ", " + data.sys.country;
+  	document.getElementById("t-reading").innerHTML = data.main.temp;
+  	document.getElementById("w-reading").innerHTML = data.weather[0].description;
+  	document.getElementById("windspeed").innerHTML = data.wind.speed;
+  	// console.log(data.sys.country);
+  	// console.log(data.weather[0].description);
+  },
+  error: function(err){alert(err);},
  
-// });
-// }
+});
+}
 
 /*$(document).ready(function(){
 
