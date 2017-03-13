@@ -5,7 +5,7 @@ body{
 #wrapper {
 
 	height: 1024px;
-	width: 600px;
+	width: 300px;
 	margin: auto;
 	/*position: relative;*/
 	padding-top: 60px;
@@ -16,6 +16,10 @@ body{
 
 #left-col {
 	background-color: lavenderblush;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-around;
+	
 }
 
 #right-col {
@@ -30,4 +34,24 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
 }
+
+#t-reading{
+
+	margin-right: 10px;
+}
+
+#t-toggle {
+/*	height:20px;*/
+	padding-bottom: 30px;
+}
+
+#temp {
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
+  .toggle.ios .toggle-handle { border-radius: 20px; }

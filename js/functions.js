@@ -91,10 +91,10 @@ function swapTempUnit(){
 
 	console.log(temp_c + " " + temp_f);
 	if(unit == 0){
-		document.getElementById("t-reading").innerHTML = "<h1>" + data.current_observation.temp_c + "</h1>";
+		document.getElementById("t-reading").innerHTML = "<h1>" + temp_c + "</h1>";
 		unit = 1;
 	} else if(unit == 1){
-		document.getElementById("t-reading").innerHTML = "<h1>" + data.current_observation.temp_f + "</h1>";
+		document.getElementById("t-reading").innerHTML = "<h1>" + temp_f + "</h1>";
 		unit = 0;
 	}
 
