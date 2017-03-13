@@ -1,5 +1,8 @@
 // var x = document.getElementById("demo"); var y =
 // document.getElementById("weather"); var lat; var lon;
+var temp_c;
+var temp_f;
+var unit = 0;
 
 /*Changes to be made getLocation - Scrap JS Geolookup; Introduce Wunderground
 with AJAX call to
@@ -27,7 +30,7 @@ function getLocation() {
 
             var country = data.location.country_name;             
             var city = data.location.city;             
-            document.getElementById("location").innerHTML= "<div class='col-md-12 text-center'><h3>"+ city + ", " + country + "</h3></div>";             
+            document.getElementById("location").innerHTML= "<h3>"+ city + ", " + country + "</h3>";             
             getWeather(country, city);         
         },
 	error: function(err){alert(err);}
@@ -57,9 +60,23 @@ $.ajax({
 data.current_observation.temperature_string,   store
 data.current_observation.temp_f and temp_c for toggling later on,
 data.current_observation.wind_string and data.current_observation.icon_url*/
+
+	temp_f = data.current_observation.temp_f;
+	temp_c = data.current_observation.temp_c;
+
+	console.log(temp_c + " " + temp_f);
+
+	//document.getElementById("checkUnit").addEventListener("onChange",swapTempUnit, false);
+
+	$(':checkbox').change(function() {
+
+       swapTempUnit();
+
+
+	}); 
   
     // document.getElementById("location").innerHTML = data.name + ", " + data.sys.country;     
-    document.getElementById("t-reading").innerHTML = "<h1>" + data.current_observation.temperature_string + "</h1>";
+    document.getElementById("t-reading").innerHTML = "<h1>" + data.current_observation.temp_f + "</h1>";
     document.getElementById("w-image").innerHTML = " <img src='" + data.current_observation.icon_url + "' alt='" + data.current_observation.icon + "' >";
 	document.getElementById("w-reading").innerHTML = data.current_observation.weather;
 	// document.getElementById("windspeed").innerHTML = data.current_observation.wind_string;     
@@ -68,6 +85,19 @@ data.current_observation.wind_string and data.current_observation.icon_url*/
 error: function(err){alert(err);}
  
 }); 
+}
+
+function swapTempUnit(){
+
+	console.log(temp_c + " " + temp_f);
+	if(unit == 0){
+		document.getElementById("t-reading").innerHTML = "<h1>" + data.current_observation.temp_c + "</h1>";
+		unit = 1;
+	} else if(unit == 1){
+		document.getElementById("t-reading").innerHTML = "<h1>" + data.current_observation.temp_f + "</h1>";
+		unit = 0;
+	}
+
 }
 
 /*$(document).ready(function(){
@@ -80,7 +110,9 @@ error: function(err){alert(err);}
 
 $(document).ready(function(){
 
-	console.log("DOM ready"); 
+	console.log("DOM ready");
+	//$("#t-toggle").checkbox('setting', 'onChange', swapTempUnit); 
+	//document.getElementById("checkUnit").addEventListener("onChange",swapTempUnit, false);
 	getLocation();
 	
 });

@@ -7,14 +7,27 @@ body{
 	height: 1024px;
 	width: 600px;
 	margin: auto;
-	position: relative;
+	/*position: relative;*/
 	padding-top: 60px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 
 #left-col {
-	background-color: lavender;
+	background-color: lavenderblush;
 }
 
 #right-col {
 	background-color: lavenderblush;
+}
+
+#location {
+	background-color: lavenderblush;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
