@@ -21,10 +21,10 @@
 	<link rel="stylesheet" type="text/css" href="css/theme.css">
 
 </head>
-<body id="backdrop">
+<body>
 
 <!-- Set the background of #backdrop to the image corresponding to the weather returned.  -->
-
+<div id="backdrop">
 <div id="wrapper" class="container-fluid">
 
 <!-- Wrapper will contain all the content information at a fixed sixe: 1024 x 600, centered with no margin at the top -->
@@ -36,14 +36,17 @@
 	<p id="demo"></p>
 
 	<p id="weather"></p> -->
-	<div class="row vertical-center" style="background-color: #999;">
+	<div class="row vertical-center location-box">
 		
-		Displaying Local Weather for:
+		<h4>Displaying Local Weather for:</h4>
+
+		<h3 id="location"></h3>
+
 		
 	</div>
-	<div id="location" class="row vertical-center">
+	<!-- <div id="location" class="row vertical-center location-box">
 		
-	</div>
+	</div> -->
 
 	<div id="temp"  class="row">
 		<div id="left-col" class="col-md-6">
@@ -60,8 +63,19 @@
 		</div>
 	</div>
 
-	<div></div>
+<!-- 	<div id="powered" class="row vertical center">
+
+		<p>Powered by:</p>
+		<div id="info">
+		<img src="img/wunder50.png"/><p> and </p><img id="pix" src="img/pixabay.png"/>
+		</div>
+	</div> -->
+
+	<div id="footer" class="row text-center">
+		&copy;<script type="text/javascript"> document.write(new Date().getFullYear());</script> ManAYaad Inc.
+	</div>
 	
+</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
